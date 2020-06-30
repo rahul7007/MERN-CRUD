@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 const db = require('./db')
-const mbDetectRouter = require('./routes/crudRouter')
+const mbDetectRouter = require('./routes/myRouter')
 
 const app = express()
 const apiPort = 5000
@@ -15,7 +15,7 @@ app.use(bodyParser.json())
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.get('/', (req, res) => {
-    res.send('Hello World,React is here!')
+    res.send('Hello World!')
 })
 
 app.use('/api', mbDetectRouter)
